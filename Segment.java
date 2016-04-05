@@ -47,7 +47,7 @@ public class Segment
     }
     
     /**
-     * Erase a determinate canvas.
+     * Erase the segment.
      */
     public void eraseSegment(Canvas canvas)
     {
@@ -64,5 +64,13 @@ public class Segment
         else if (direccion == 3){ //Hacia arriba. ^
             canvas.drawLine(posX, posY, posX, posY - Segment.LONGITUD_SEGMENTO);
         }
+    }
+    
+    /**
+     * Return the X position.
+     */
+    public int getPosX()
+    {
+        return posX;
     }
 }
