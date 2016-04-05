@@ -96,4 +96,19 @@ public class Segment
         }
         return position;
     }
+    
+    /**
+     * Return the Y Final position.
+     */
+    public int getPosYFinal()
+    {
+        int position = 0;
+        if (direccion == 1){ //Hacia abajo. !^
+            position = posY + Segment.LONGITUD_SEGMENTO;
+        }
+        else if (direccion == 3){ //Hacia arriba. ^
+            position = posY - Segment.LONGITUD_SEGMENTO;
+        }
+        return position;
+    }
 }
