@@ -73,4 +73,13 @@ public class Segment
     {
         return posX;
     }
+    
+    /**
+     * Return the Y position.
+     */
+    public int getPosY()
+    {
+        return posY;
+    }
+
 }
