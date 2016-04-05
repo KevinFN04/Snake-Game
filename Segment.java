@@ -45,4 +45,24 @@ public class Segment
             canvas.drawLine(posX, posY, posX, posY - Segment.LONGITUD_SEGMENTO);
         }
     }
+    
+    /**
+     * Erase a determinate canvas.
+     */
+    public void eraseSegment(Canvas canvas)
+    {
+        canvas.setForegroundColor(Color.white);
+        if (direccion == 0){ //Hacia la derecha. -->
+            canvas.drawLine(posX, posY, posX + Segment.LONGITUD_SEGMENTO, posY);
+        }
+        else if (direccion == 1){ //Hacia abajo. !^
+            canvas.drawLine(posX, posY, posX, posY + Segment.LONGITUD_SEGMENTO);
+        }
+        else if (direccion == 2){ //Hacia la izquierda. <--
+            canvas.drawLine(posX, posY, posX - Segment.LONGITUD_SEGMENTO, posY);
+        }
+        else if (direccion == 3){ //Hacia arriba. ^
+            canvas.drawLine(posX, posY, posX, posY - Segment.LONGITUD_SEGMENTO);
+        }
+    }
 }
