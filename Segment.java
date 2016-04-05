@@ -25,4 +25,24 @@ public class Segment
         this.direccion = direccion;
         this.color = color;
     }
+    
+    /**
+     * Draw one segment in a determinate canvas.
+     */
+    public void drawSegment(Canvas canvas)
+    {
+        canvas.setForegroundColor(color);
+        if (direccion == 0){ //Hacia la derecha. -->
+            canvas.drawLine(posX, posY, posX + Segment.LONGITUD_SEGMENTO, posY);
+        }
+        else if (direccion == 1){ //Hacia abajo. !^
+            canvas.drawLine(posX, posY, posX, posY + Segment.LONGITUD_SEGMENTO);
+        }
+        else if (direccion == 2){ //Hacia la izquierda. <--
+            canvas.drawLine(posX, posY, posX - Segment.LONGITUD_SEGMENTO, posY);
+        }
+        else if (direccion == 3){ //Hacia arriba. ^
+            canvas.drawLine(posX, posY, posX, posY - Segment.LONGITUD_SEGMENTO);
+        }
+    }
 }
