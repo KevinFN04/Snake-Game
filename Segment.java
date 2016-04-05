@@ -82,4 +82,18 @@ public class Segment
         return posY;
     }
 
+    /**
+     * Return the X Final position.
+     */
+    public int getPosXFinal()
+    {
+        int position = 0;
+        if (direccion == 0){ //Hacia la derecha. -->
+            position = posX + Segment.LONGITUD_SEGMENTO;
+        }
+        else if (direccion == 2){ //Hacia la izquierda. <--
+            position = posX - Segment.LONGITUD_SEGMENTO;
+        }
+        return position;
+    }
 }
