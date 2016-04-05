@@ -111,4 +111,12 @@ public class Segment
         }
         return position;
     }
+    
+    /**
+     * Return the direction of the segment.
+     */
+    public int getDirection()
+    {
+        return direccion;
+    }
 }
