@@ -49,4 +49,34 @@ public class SnakeGame
         lienzo.drawString("<<GAME OVER>>", (ANCHO_LIENZO/2) - 45, (ALTO_LIENZO/2) - 45);
     }
 
+    public void startGame(){
+        Random aleat = new Random();
+        int aleatX = 0;
+        int aleatY = 0;
+        boolean comida = false;
+        boolean continua = true;
+
+        drawSnake();
+        while (continua){
+            aleatX = aleat.nextInt(500);
+            aleatY = aleat.nextInt(500);
+            lienzo.setForegroundColor(Color.BLACK);
+            lienzo.fillCircle(aleatX,aleatY, 8);
+            while(!comida && continua){
+                lienzo.wait(60);            
+                adolf.borrar(lienzo);
+                continua = adolf.mover(lienzo);
+                adolf.dibujar(lienzo);  
+                if(adolf.getXCabeza() == aleatX && adolf.getYCabeza() == aleatY){
+                    comida = true;
+                    lienzo.setForegroundColor(Color.WHITE);
+                    lienzo.fillCircle(aleatX,aleatY, 8);
+                }
+                if(!continua){
+                    lienzo.drawString("<<GAME OVER>>", (ANCHO_LIENZO/2) - 45, (ALTO_LIENZO/2) - 45);
+                    comida = true;
+                }
+            }
+        }
+    }
 }
